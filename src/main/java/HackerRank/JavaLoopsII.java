@@ -3,6 +3,10 @@ package HackerRank;
 import java.util.Scanner;
 
 public class JavaLoopsII {
+
+
+//    https://www.hackerrank.com/challenges/java-loops/problem?isFullScreen=true
+
     public static void main(String []argh){
         Scanner in = new Scanner(System.in);
         int t=in.nextInt();

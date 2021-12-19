@@ -3,6 +3,9 @@ package LeetCode;
 import java.util.HashMap;
 
 public class TwoSum {
+
+    //https://leetcode.com/problems/two-sum/
+
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> num_map = new HashMap<>();
         for (int i = 0 ; i < nums.length; i++){
