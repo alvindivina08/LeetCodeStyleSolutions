@@ -1,7 +1,6 @@
 package LeetCode;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class RomanToInteger {
 
@@ -11,7 +10,7 @@ public class RomanToInteger {
     }
 
     public static int romanToInt(String s) {
-        Map<Character, Integer> map = new HashMap();
+        HashMap<Character, Integer> map = new HashMap();
         map.put('I', 1);
         map.put('V', 5);
         map.put('X', 10);
@@ -43,7 +42,7 @@ public class RomanToInteger {
 
 
                 System.out.println("after calculation, result is now " + result);
-                System.out.println("after calculation, " + "s.charAt(i) is " + s.charAt(i) + " and result is now " + result);
+                System.out.println("after calculation, s.charAt(i) is " + s.charAt(i) + " and result is now " + result);
                 System.out.println("====================================");
 
             } else {
@@ -57,7 +56,7 @@ public class RomanToInteger {
 
 
                 System.out.println("equals " + result);
-                System.out.println("after calculation, " + "s.charAt(i) is " + s.charAt(i) + " and result is now " + result);
+                System.out.println("after calculation, s.charAt(i) is " + s.charAt(i) + " and result is now " + result);
                 System.out.println("====================================");
             }
         }
@@ -65,7 +64,7 @@ public class RomanToInteger {
     }
 
     public static int romanToIntBackApproach(String s) {
-        Map<Character, Integer> map = new HashMap();
+        HashMap<Character, Integer> map = new HashMap();
         map.put('I', 1);
         map.put('V', 5);
         map.put('X', 10);
@@ -78,6 +77,28 @@ public class RomanToInteger {
         for (int i = s.length() - 2; i >= 0; i--) {
             if (map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) {
                 result -= map.get(s.charAt(i));
+            } else {
+                result += map.get(s.charAt(i));
+            }
+        }
+        return result;
+    }
+
+    public static int romanToIntWithoutSysOut(String s) {
+        HashMap<Character, Integer> map = new HashMap();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+
+        int result = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (i > 0 && map.get(s.charAt(i)) > map.get(s.charAt(i - 1))) {
+                result += map.get(s.charAt(i)) - 2 * map.get(s.charAt(i - 1));
             } else {
                 result += map.get(s.charAt(i));
             }
