@@ -1,12 +1,19 @@
 package LeetCode.Easy;
 
+import java.util.Arrays;
+
 public class MaximumSubarray {
     /* https://leetcode.com/problems/maximum-subarray/
      * Kadane's algorithm solution.
-     *
      */
 
-    public int maxSubArray(int[] nums) {
+    static int[] numbers = {-1,-2,-3,-20,0,-1,-30,-20,-100,-300};
+    public static void main(String[] args){
+        System.out.println(Arrays.toString(numbers));
+        System.out.println(maxSubArray(numbers));
+    }
+
+    public static int maxSubArray(int[] nums) {
         int n = nums.length;
         int[] dp = new int[n];
         dp[0] = nums[0];
