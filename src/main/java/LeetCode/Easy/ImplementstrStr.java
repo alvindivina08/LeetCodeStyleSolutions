@@ -1,6 +1,9 @@
 package LeetCode.Easy;
 
 public class ImplementstrStr {
+    /* needle in a haystack
+     * example. haystack = hello, needle = ll
+     */
     public int strStr(String haystack, String needle) {
         for (int i = 0; ; i++) {
             for (int j = 0; ; j++) {
