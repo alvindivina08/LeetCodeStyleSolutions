@@ -25,9 +25,9 @@ public class SameTree {
         }
 
         while(!queue.isEmpty()) {
-
             TreeNode first = queue.poll();
             TreeNode second = queue.poll();
+
             if (first == null && second == null)
                 return true;
             if (first == null || second == null)
